@@ -20,9 +20,8 @@ public class Inventory {
     private Long id;
 
     private LocalDateTime createdDate;
-    private String name;
     private String sku;
-
+    private String name;
     private float qty;
 }
 
