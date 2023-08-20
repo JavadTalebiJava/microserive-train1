@@ -1,6 +1,7 @@
 package com.vitelco.product.controller;
 
-import com.vitelco.product.model.Product;
+import com.vitelco.product.model.dto.request.ProductRequest;
+import com.vitelco.product.model.dto.response.ProductResponse;
 import com.vitelco.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,13 +18,13 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody Product product){
-        productService.save(product);
+    public void save(@RequestBody ProductRequest productRequest){
+        productService.save(productRequest.convert());
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Product> getAll(){
+    public List<ProductResponse> getAll(){
         return productService.findAll();
     }
 }
