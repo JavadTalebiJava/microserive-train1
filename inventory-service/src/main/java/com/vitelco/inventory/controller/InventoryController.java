@@ -18,12 +18,10 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
-    //http://localhost:4002/v1/inventory/check/11111,22222
-    //http://localhost:4002/v1/inventory/check/skuCode=11111,skuCode=22222
     @PostMapping("/check")
     @ResponseStatus(HttpStatus.OK)
     public List<InventoryResponse> isInStock(@RequestBody InventoryRequest inventoryRequest) {
-        return inventoryService.isAvailable(inventoryRequest.getSkuCodes());
+        return inventoryService.getStockInventoryStatus(inventoryRequest.getSkuCodes());
     }
 
     @GetMapping

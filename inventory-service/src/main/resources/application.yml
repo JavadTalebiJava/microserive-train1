@@ -1,10 +1,10 @@
 spring:
   application:
-    name: order-service
+    name: inventory-service
   datasource:
     password: postgres
     username: postgres
-    url: jdbc:postgresql://localhost:5431/postgres
+    url: jdbc:postgresql://localhost:5432/postgres
     type: org.postgresql.ds.PGPoolingDataSource
     hikari:
       connection-timeout: 20000
@@ -16,4 +16,4 @@ spring:
     hibernate:
       ddl-auto: create-drop
 server:
-  port: 4001
+  port: 4002

@@ -50,7 +50,7 @@ public class InventoryServiceImpl implements InventoryService {
      */
     @Override
     @Transactional(readOnly = true)
-    public List<InventoryResponse> isAvailable(List<String> skuCodes) {
+    public List<InventoryResponse> getStockInventoryStatus(List<String> skuCodes) {
         List<Inventory> lst = inventoryRepository.findInventoriesBySkuIn(skuCodes);
 
         List<InventoryResponse> lst2 = lst.stream()

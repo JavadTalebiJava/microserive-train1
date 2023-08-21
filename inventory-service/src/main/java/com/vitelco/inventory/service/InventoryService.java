@@ -28,5 +28,5 @@ public interface InventoryService {
      * @param skuCodes
      * @return A list of InventoryResponse objects representing the availability of the product.
      */
-    List<InventoryResponse> isAvailable(List<String> skuCodes);
+    List<InventoryResponse> getStockInventoryStatus(List<String> skuCodes);
 }
